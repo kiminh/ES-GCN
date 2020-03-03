@@ -409,8 +409,8 @@ class Config(object):
 			if self.exportName != None and (self.export_steps!=0 and epoch % self.export_steps == 0):
 				self.save_pytorch()
 			if self.log_on == 1:
-				print epoch
-				print res
+				print (epoch)
+				print (res)
 		if self.exportName != None:
 			self.save_pytorch()
 		if self.out_path != None:
@@ -432,5 +432,5 @@ class Config(object):
 			res = self.trainModel.predict(self.test_h, self.test_t, self.test_r)
 			self.lib.testTail(res.data.numpy().__array_interface__['data'][0])
 			if self.log_on:
-				print epoch
+				print (epoch)
 		self.lib.test()
