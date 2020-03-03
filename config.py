@@ -9,7 +9,7 @@ import datetime
 import ctypes
 import json
 
-[docs]class Config(object):
+class Config(object):
 	r"""In this class, we set the configuration parameters, adopt C library for data and memory processing. In the following,
 	we train models and test models.
 	"""
@@ -75,13 +75,13 @@ import json
 			self.test_t_addr = self.test_t.__array_interface__['data'][0]
 			self.test_r_addr = self.test_r.__array_interface__['data'][0]
 
-[docs]	def get_ent_total(self):
+	def get_ent_total(self):
 		r"""This method gets the entity total of knowledge base.
 		"""
 		return self.entTotal
 
 
-[docs]	def get_rel_total(self):
+	def get_rel_total(self):
 		r""" This method gets the relation total of knowledge base.
 		"""
 		return self.relTotal
@@ -91,7 +91,7 @@ import json
 		
 		self.lmbda = lmbda
 
-[docs]	def set_opt_method(self, method):
+	def set_opt_method(self, method):
 		r"""This method sets the optimizer for your model.
 
 		Arguments:
@@ -100,7 +100,7 @@ import json
 		self.opt_method = method
 
 
-[docs]	def set_test_flag(self, flag):
+	def set_test_flag(self, flag):
 		r"""This method sets whether we test our model.
 		
 		Arguments:
@@ -111,7 +111,7 @@ import json
 		self.test_flag = flag
 
 
-[docs]	def set_log_on(self, flag):
+	def set_log_on(self, flag):
 		r"""This method sets whether to log on the loss value.
 
 		Arguments:
@@ -120,7 +120,7 @@ import json
 		self.log_on = flag
 
 
-[docs]	def set_alpha(self, alpha):
+	def set_alpha(self, alpha):
 		r"""This mothod sets the learning rate for gradient descent.
 
 		Arguments:
@@ -129,19 +129,19 @@ import json
 		self.alpha = alpha
 
 
-[docs]	def set_in_path(self, path):
+	def set_in_path(self, path):
 		r"""This method sets the path of benchmark.
 		"""
 		self.in_path = path
 
 
-[docs]	def set_out_files(self, path):
+	def set_out_files(self, path):
 		r"""This method sets where to emport embedding matrix.
 		"""
 		self.out_path = path
 
 
-[docs]	def set_bern(self, bern):
+	def set_bern(self, bern):
 		r"""This method sets the strategy for negative sampling.
 
 		Arguments:
@@ -150,7 +150,7 @@ import json
 		self.bern = bern
 
 
-[docs]	def set_dimension(self, dim):
+	def set_dimension(self, dim):
 		r"""This method sets the entity dimension and  relation dimension at the same time.
 
 		Arguments:
@@ -161,7 +161,7 @@ import json
 		self.rel_size = dim
 
 
-[docs]	def set_ent_dimension(self, dim):
+	def set_ent_dimension(self, dim):
 		r"""This method sets the dimension of entity.
 
 		Arguments:
@@ -170,7 +170,7 @@ import json
 		self.ent_size = dim
 
 
-[docs]	def set_rel_dimension(self, dim):
+	def set_rel_dimension(self, dim):
 		r"""This method sets the dimension of relation.
 
 		Arguments:
@@ -179,7 +179,7 @@ import json
 		self.rel_size = dim
 
 
-[docs]	def set_train_times(self, times):
+	def set_train_times(self, times):
 		r"""This method sets the rounds for training.
 
 		Arguments:
@@ -188,7 +188,7 @@ import json
 		self.train_times = times
 
 	
-[docs]	def set_nbatches(self, nbatches):
+	def set_nbatches(self, nbatches):
 		r"""This method sets the number of batch.
 
 		Arguments:
@@ -198,7 +198,7 @@ import json
 		self.nbatches = nbatches
 
 	
-[docs]	def set_margin(self, margin):
+	def set_margin(self, margin):
 		r"""This method sets the margin for the widely used pairwise margin-based ranking loss.
 
 		Arguments:
@@ -207,7 +207,7 @@ import json
 		self.margin = margin
 
 	
-[docs]	def set_work_threads(self, threads):
+	def set_work_threads(self, threads):
 		r"""We can use multi-threading trainning for accelaration. This method sets the numebr of threads.
 
 		Arguments:
@@ -217,7 +217,7 @@ import json
 		self.workThreads = threads
 
 	
-[docs]	def set_ent_neg_rate(self, rate):
+	def set_ent_neg_rate(self, rate):
 		r"""the number of negatives generated per positive training sample influnces the experiment results.
 		This method sets the number of negative entities constructed per positive sample.
 
@@ -227,7 +227,7 @@ import json
 		self.negative_ent = rate
 
 	
-[docs]	def set_rel_neg_rate(self, rate):
+	def set_rel_neg_rate(self, rate):
 		r"""This method sets the number of negative relations per positive sample.
 
 		Arguments:
@@ -236,7 +236,7 @@ import json
 		self.negative_rel = rate
 
 	
-[docs]	def set_import_files(self, path):
+	def set_import_files(self, path):
 		r"""Model paramters are exported automatically every few rounds. 
 		This method sets the path to find exported model parameters.
 
@@ -246,7 +246,7 @@ import json
 		self.importName = path
 
 	
-[docs]	def set_export_files(self, path):
+	def set_export_files(self, path):
 		r"""Model parameters will be exported to this path automatically.
 
 		Arguments:
@@ -255,7 +255,7 @@ import json
 		self.exportName = path
 
 	
-[docs]	def set_export_steps(self, steps):
+	def set_export_steps(self, steps):
 		r""" This method sets that every few steps the model paramters will be exported automatically.
 
 		Arguments:
@@ -265,7 +265,7 @@ import json
 		self.export_steps = steps
 
 	
-[docs]	def set_lr_decay(self,lr_decay):
+	def set_lr_decay(self,lr_decay):
 		r"""This method sets the learning rate decay for ``Adagrad`` optim method.
 
 		Arguments:
@@ -274,7 +274,7 @@ import json
 		self.lr_decay=lr_decay
 
 	
-[docs]	def set_weight_decay(self,weight_decay):
+	def set_weight_decay(self,weight_decay):
 		r"""This method sets the weight decay for ``Adagrad`` optim method.
 
 		Arguments:
@@ -283,25 +283,25 @@ import json
 		self.weight_decay=weight_decay
 
 	
-[docs]	def sampling(self):
+	def sampling(self):
 		r"""In this function, we choose positive samples and construct negative samples.
 		"""
 		self.lib.sampling(self.batch_h_addr, self.batch_t_addr, self.batch_r_addr, self.batch_y_addr, self.batch_size, self.negative_ent, self.negative_rel)
 
 
-[docs]	def save_pytorch(self):
+	def save_pytorch(self):
 		r"""This method saves the model paramters to ``self.exportName`` which was set by :func:`set_export_files`.
 		"""
 		torch.save(self.trainModel.state_dict(), self.exportName)
 
 
-[docs]	def restore_pytorch(self):
+	def restore_pytorch(self):
 		r"""This method restore model through ``torch.load``
 		"""
 		self.trainModel.load_state_dict(torch.load(self.importName))
 
 
-[docs]	def export_variables(self, path = None):
+	def export_variables(self, path = None):
 		r"""This method export model paramters through ``torch.save``.
 
 		Arguments:
@@ -314,7 +314,7 @@ import json
 			torch.save(self.trainModel.state_dict(), path)
 
 
-[docs]	def import_variables(self, path = None):
+	def import_variables(self, path = None):
 		r"""This method export model paramters through ``torch.load``.
 
 		Arguments:
@@ -333,7 +333,7 @@ import json
 	def get_parameters_by_name(self, var_name):
 		return self.trainModel.cpu().state_dict().get(var_name)
 
-[docs]	def get_parameters(self, mode = "numpy"):
+	def get_parameters(self, mode = "numpy"):
 		r"""This method gets the model paramters.
 
 		Arguments:
@@ -352,7 +352,7 @@ import json
 		return res
 
 
-[docs]	def save_parameters(self, path = None):
+	def save_parameters(self, path = None):
 		r"""This method save model parameters as json files when training finished.
 
 		Arguments:
@@ -372,7 +372,7 @@ import json
 		for i in lists:
 			self.set_parameters_by_name(i, lists[i])
 
-[docs]	def set_model(self, model):
+	def set_model(self, model):
 		r"""This method sets the traing model and optimizer method.
 
 		Arguments:
@@ -393,7 +393,7 @@ import json
 			self.optimizer = optim.SGD(self.trainModel.parameters(), lr=self.alpha)
 
 
-[docs]	def run(self):
+	def run(self):
 		r"""In this function, we train the model"""
 		if self.importName != None:
 			self.restore_pytorch()
@@ -417,7 +417,7 @@ import json
 			self.save_parameters(self.out_path)
 
 
-[docs]	def test(self):
+	def test(self):
 		r"""In this function, we test the model."""
 		if self.importName != None:
 			self.restore_pytorch()
