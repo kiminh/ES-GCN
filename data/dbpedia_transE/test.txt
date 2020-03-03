@@ -1,4 +1,3 @@
-444
 Fabrice_Gautrat	subject	United_Soccer_League_players
 Cindy_Mackey	type	AmericanFemaleGolfers
 African_grey_hornbill	subject	Birds_of_Cameroon

@@ -1,4 +1,3 @@
-444
 African_grey_hornbill	class	Bird
 Momchil_Tsvetanov	birthYear	XMLSchema#gYear
 Kaalpurush	label	Kaalpurush

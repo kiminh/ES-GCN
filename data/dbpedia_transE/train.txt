@@ -1,4 +1,3 @@
-3548
 Saint-Raphaël,_Var	name	Saint-Raphaël
 Stemonoporus_laevifolius	conservationStatusSystem	IUCN2.3
 Momchil_Tsvetanov	type	BulgarianAProfessionalFootballGroupPlayers
