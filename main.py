@@ -24,8 +24,6 @@ import torch.nn as nn
 from torch import optim
 import torch.nn.functional as F
 from model_gcn import ESGCN
-from model_gcn_dgl import ESGCN_DGL
-from model_gat import ESGAT
 
 def train(esgcn, data, label, criterion, optimizer, n_epoch, save_every, directory, device, clip, entity2vec, pred2ix, regularization, adj):
     if not path.exists(directory):
@@ -70,12 +68,7 @@ def train_iter(db_name, base, data, label, pred2ix, pred2ix_size, entity2vec, pr
         print("use regularization in training")
     for i in range(5):
         train_data, train_label, train_graph, _, _, _ = split_data(base, i, data, label, data_graph)
-        if model =='ESGCN':
-          esgcn = ESGCN(pred2ix_size, pred_embedding_dim, transe_dim, hidden_size, device)
-        else if model =='ESGCN_DGL':
-          esgcn = ESGCN_DGL(pred2ix_size, pred_embedding_dim, transe_dim, hidden_size, device, label)
-        else if model =='ESGAT':
-          esgcn = ESGAT(pred2ix_size, pred_embedding_dim, transe_dim, hidden_size, device)
+        esgcn = ESGCN(pred2ix_size, pred_embedding_dim, transe_dim, hidden_size, device)
         esgcn.to(device)
         print(esgcn)
         optimizer = optim.Adam(esgcn.parameters(), lr=lr,  weight_decay=5e-4)
